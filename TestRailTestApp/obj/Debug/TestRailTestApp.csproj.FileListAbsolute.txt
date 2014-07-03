@@ -1,0 +1,12 @@
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\TestRailTestApp.exe.config
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\TestRailTestApp.exe
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\TestRailTestApp.pdb
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\Newtonsoft.Json.dll
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\TestRail.dll
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\TestRail.pdb
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\TestRail.xml
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\obj\Debug\TestRailTestApp.csprojResolveAssemblyReference.cache
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\obj\Debug\TestRailTestApp.exe
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\obj\Debug\TestRailTestApp.pdb
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\Newtonsoft.Json.xml
+c:\users\paynec\documents\visual studio 2013\Projects\TestRailTestApp\TestRailTestApp\bin\Debug\Newtonsoft.Json.pdb

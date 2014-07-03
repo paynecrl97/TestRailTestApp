@@ -1,0 +1,1360 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestRail</name>
+    </assembly>
+    <members>
+        <member name="T:TestRail.Types.Case">
+            <summary>stores information about a case</summary>
+        </member>
+        <member name="M:TestRail.Types.Case.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Case.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a case</summary>
+            <param name="json">json to parse</param>
+            <returns>case corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Case.GetJson">
+            <summary>creates a json object with the given parameters</summary>
+            <param name="title">title of the case</param>
+            <param name="typeID">(optional)the ID of the case type</param>
+            <param name="priorityID">(optional)the id of the case priority</param>
+            <param name="estimate">(optional)the estimate, e.g. "30s" or "1m 45s"</param>
+            <param name="milestoneID">(optional)the ID of the milestone to link to the test case</param>
+            <param name="refs">(optional)a comma-separated list of references/requirements</param>
+            <returns>json object for case</returns>
+        </member>
+        <member name="P:TestRail.Types.Case.ID">
+            <summary>id of the case</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.Title">
+            <summary>title of the case</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.SectionID">
+            <summary>section id of the case</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.TypeID">
+            <summary>type id of the case</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.PriorityID">
+            <summary>priority id of the case</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.References">
+            <summary>references for the case</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.MilestoneID">
+            <summary>the milestone this case was associated with</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.CreatedBy">
+            <summary>the user who created this case</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.CreatedOn">
+            <summary>creation date</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.Estimate">
+            <summary>estimate time this case will take</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.EstimateForecast">
+            <summary>estimate forecast</summary>
+        </member>
+        <member name="P:TestRail.Types.Case.SuiteID">
+            <summary>suite id for this case</summary>
+        </member>
+        <member name="T:TestRail.Types.CaseField">
+            <summary>stores information about a case field</summary>
+        </member>
+        <member name="M:TestRail.Types.CaseField.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.CaseField.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>Parses the json object into a CaseField object</summary>
+            <param name="json">json to parse into a CaseField</param>
+            <returns>CaseField corresponding to the json</returns>
+        </member>
+        <member name="P:TestRail.Types.CaseField.ID">
+            <summary>id of the field</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.Name">
+            <summary>easy name of the custom case field</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.SystemName">
+            <summary>system name of the custom case field</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.EntityID">
+            <summary>entity id</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.Label">
+            <summary>display label for the custom case field</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.Description">
+            <summary>description of the custom case field</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.TypeID">
+            <summary>type of custom case field as described by the case type</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.LocationID">
+            <summary>location id</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.DisplayOrder">
+            <summary>display order</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.Configs">
+            <summary>list of configurations for this case field</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseField.IsMulti">
+            <summary>is multi</summary>
+        </member>
+        <member name="T:TestRail.Types.CaseType">
+            <summary>stores information about a case type</summary>
+        </member>
+        <member name="M:TestRail.Types.CaseType.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.CaseType.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a suite</summary>
+            <param name="json">json to parse</param>
+            <returns>suite corresponding to the json</returns>
+        </member>
+        <member name="P:TestRail.Types.CaseType.ID">
+            <summary>ID of the case type</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseType.Name">
+            <summary>Name of the case type</summary>
+        </member>
+        <member name="P:TestRail.Types.CaseType.IsDefault">
+            <summary>is the case type the default</summary>
+        </member>
+        <member name="T:TestRail.CommandResult">
+            <summary>represents the result of a command </summary>
+        </member>
+        <member name="T:TestRail.CommandResult`1">
+            <summary>represents the result of a command</summary>
+            <typeparam name="T">type of the result</typeparam>
+        </member>
+        <member name="M:TestRail.CommandResult`1.#ctor">
+            <summary>parameterless constructor</summary>
+        </member>
+        <member name="M:TestRail.CommandResult`1.#ctor(System.Boolean,`0,System.Exception)">
+            <summary>constructor</summary>
+            <param name="wasSuccessful">true if the command was successful</param>
+            <param name="result">result of the command</param>
+            <param name="e">exception thrown by the command</param>
+        </member>
+        <member name="P:TestRail.CommandResult`1.WasSuccessful">
+            <summary>true if the command was successful</summary>
+        </member>
+        <member name="P:TestRail.CommandResult`1.Value">
+            <summary>result of the command</summary>
+        </member>
+        <member name="P:TestRail.CommandResult`1.Exception">
+            <summary>exception thrown by the command</summary>
+        </member>
+        <member name="M:TestRail.CommandResult.#ctor(System.Boolean,System.String,System.Exception)">
+            <summary>constructor</summary>
+            <param name="wasSuccessful">true if the command was successful</param>
+            <param name="result">result of the command</param>
+            <param name="e">exception thrown by the command</param>
+        </member>
+        <member name="M:TestRail.Types.ConfigurationGroup.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a ConfigurationGroup</summary>
+            <param name="json">json to parse</param>
+            <returns>ConfigurationGroup corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Configuration.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a Configuration</summary>
+            <param name="json">json to parse</param>
+            <returns>Configuration corresponding to the json</returns>
+        </member>
+        <member name="T:TestRail.Types.Config">
+            <summary>stores information about a config</summary>
+        </member>
+        <member name="M:TestRail.Types.Config.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>Constructor</summary>
+            <param name="json">json object to parse into a Config</param>
+        </member>
+        <member name="P:TestRail.Types.Config.Option">
+            <summary>Options for this configuration</summary>
+        </member>
+        <member name="P:TestRail.Types.Config.ID">
+            <summary>Guid unique identifier as a string</summary>
+        </member>
+        <member name="P:TestRail.Types.Config.Context">
+            <summary>Configuration context</summary>
+        </member>
+        <member name="T:TestRail.Types.ConfigContext">
+            <summary>stores informations about the context for a case field's config section</summary>
+        </member>
+        <member name="M:TestRail.Types.ConfigContext.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parse a json object into a Config Context</summary>
+            <param name="json">takes a json object and converts it to a ConfigContext</param>
+        </member>
+        <member name="P:TestRail.Types.ConfigContext.IsGlobal">
+            <summary>Is the context global</summary>
+        </member>
+        <member name="P:TestRail.Types.ConfigContext.ProjectIDs">
+            <summary>List of project IDs</summary>
+        </member>
+        <member name="T:TestRail.Types.ConfigOption">
+            <summary>stores information about an option for a case field's configuration</summary>
+        </member>
+        <member name="M:TestRail.Types.ConfigOption.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parse a json object into a Config Option</summary>
+            <param name="json">converts the json object to a ConfigOption</param>
+        </member>
+        <member name="P:TestRail.Types.ConfigOption.IsRequired">
+            <summary>is this option required</summary>
+        </member>
+        <member name="P:TestRail.Types.ConfigOption.DefaultValue">
+            <summary>Default value for the option</summary>
+        </member>
+        <member name="P:TestRail.Types.ConfigOption.Format">
+            <summary>format of the option</summary>
+        </member>
+        <member name="P:TestRail.Types.ConfigOption.Rows">
+            <summary>row</summary>
+        </member>
+        <member name="T:TestRail.DateTimeExtensions">
+            <summary>extension methods for the datetime class</summary>
+        </member>
+        <member name="M:TestRail.DateTimeExtensions.ToUnixTimestamp(System.DateTime)">
+            <summary>converts the date to a unix timestamp</summary>
+            <returns>a unix time stamp representing the birthday</returns>
+        </member>
+        <member name="M:TestRail.DateTimeExtensions.FromUnixTimeStamp(System.Double)">
+            <summary>generates a datetime from a unix timestamp</summary>
+            <param name="timestamp">a unix timestamp</param>
+            <returns>datetime corresponding to the supplied unix timestamp</returns>
+        </member>
+        <member name="T:TestRail.Types.Milestone">
+            <summary>stores information about a milestone</summary>
+        </member>
+        <member name="M:TestRail.Types.Milestone.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Milestone.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a milestone</summary>
+            <param name="json">json to parse</param>
+            <returns>milestone corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Milestone.GetJson">
+            <summary>Creates a json object for this class</summary>
+            <returns>json object that represents this class</returns>
+        </member>
+        <member name="P:TestRail.Types.Milestone.ID">
+            <summary>id of the milestone</summary>
+        </member>
+        <member name="P:TestRail.Types.Milestone.Name">
+            <summary>name of the milestone</summary>
+        </member>
+        <member name="P:TestRail.Types.Milestone.Description">
+            <summary>description of the milestone</summary>
+        </member>
+        <member name="P:TestRail.Types.Milestone.IsCompleted">
+            <summary>true if the milestone is completed</summary>
+        </member>
+        <member name="P:TestRail.Types.Milestone.DueOn">
+            <summary>date on which the milestone is due</summary>
+        </member>
+        <member name="P:TestRail.Types.Milestone.CompletedOn">
+            <summary>date on which the milestone was completed</summary>
+        </member>
+        <member name="P:TestRail.Types.Milestone.ProjectID">
+            <summary>id of the project with which the milestone is associated</summary>
+        </member>
+        <member name="P:TestRail.Types.Milestone.Url">
+            <summary>the url for to view the milestone</summary>
+        </member>
+        <member name="T:TestRail.Types.Plan">
+            <summary>stores information about a plan</summary>
+        </member>
+        <member name="M:TestRail.Types.Plan.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Plan.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a plan</summary>
+            <param name="json">json to parse</param>
+            <returns>plan corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Plan.GetJson">
+            <summary>Get the json object that describes this object</summary>
+            <returns>the json object</returns>
+        </member>
+        <member name="P:TestRail.Types.Plan.ID">
+            <summary>id of the plan</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.Name">
+            <summary>name of the plan</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.Description">
+            <summary>description of the plan</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.MilestoneID">
+            <summary>id of the milestone associated with the plan</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.IsCompleted">
+            <summary>true if the plan has been completed</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CompletedOn">
+            <summary>date on which the plan was completed</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.PassedCount">
+            <summary>number of tests in the plan that passed</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.BlockedCount">
+            <summary>number of tests in the plan that are blocked</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.UntestedCount">
+            <summary>number of tests in the plan that are untested</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.RetestCount">
+            <summary>number of tests in the plan that need to be retested</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.FailedCount">
+            <summary>number of tests in the plan that failed</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.ProjectID">
+            <summary>id of the project associated with the plan</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.AssignedToID">
+            <summary>ID of the user the plan is assigned to</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.Url">
+            <summary>url to view the results of the plan</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CustomStatus1Count">
+            <summary>Custom Status 1 Count</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CustomStatus2Count">
+            <summary>Custom Status 2 Count</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CustomStatus3Count">
+            <summary>Custom Status 3 Count></summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CustomStatus4Count">
+            <summary>Custom Status 4 Count</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CustomStatus5Count">
+            <summary>Custom Status 5 Count</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CustomStatus6Count">
+            <summary>Custom Status 6 Count</summary>
+        </member>
+        <member name="P:TestRail.Types.Plan.CustomStatus7Count">
+            <summary>Custom Status 7 Count</summary>
+        </member>
+        <member name="T:TestRail.Types.PlanEntry">
+            <summary>stores information about a plan entry</summary>
+        </member>
+        <member name="M:TestRail.Types.PlanEntry.GetJson">
+            <summary>Returns a json Object that represents this class</summary>
+            <returns>Json object that corresponds to this class</returns>
+        </member>
+        <member name="M:TestRail.Types.PlanEntry.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>Parse a json object to a PlanEntry</summary>
+            <param name="json">json object to parse</param>
+            <returns>PlanEntry corresponding to a json object</returns>
+        </member>
+        <member name="M:TestRail.Types.PlanEntry._ConvertToRunIDs(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            Convert the JArray to a list of Run IDs
+            </summary>
+            <param name="jarray">json to parse</param>
+            <returns>a list of run IDs, list of size 0 if none exist</returns>
+        </member>
+        <member name="M:TestRail.Types.PlanEntry._ConvertToCaseIDs(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+             Convert the Jarray to a list of case IDs
+            </summary>
+            <param name="jarray">json to parse</param>
+            <returns>a list of case IDs, list of size 0 if none exist</returns>
+        </member>
+        <member name="P:TestRail.Types.PlanEntry.ID">
+            <summary>Guid of the plan entry</summary>
+        </member>
+        <member name="P:TestRail.Types.PlanEntry.SuiteID">
+            <summary>the id of the test suite for the test run</summary>
+        </member>
+        <member name="P:TestRail.Types.PlanEntry.Name">
+            <summary>name of the test run</summary>
+        </member>
+        <member name="P:TestRail.Types.PlanEntry.AssignedToID">
+            <summary>the ID of the user the test run should be assigned to</summary>
+        </member>
+        <member name="P:TestRail.Types.PlanEntry.IncludeAll">
+            <summary>true for including all test cases of the test suite, false for a custom case selection</summary>
+        </member>
+        <member name="P:TestRail.Types.PlanEntry.CaseIDs">
+            <summary>an array of case IDs for the custom case selection</summary>
+        </member>
+        <member name="P:TestRail.Types.PlanEntry.ConfigIDs">
+            <summary>an array of config IDs to allow for multiple test run configurations to be created</summary>
+        </member>
+        <member name="T:TestRail.Types.Priority">
+            <summary>stores information about a priority</summary>
+        </member>
+        <member name="M:TestRail.Types.Priority.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Priority.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a plan</summary>
+            <param name="json">json to parse</param>
+            <returns>plan corresponding to the json</returns>
+        </member>
+        <member name="P:TestRail.Types.Priority.ID">
+            <summary>id of the priority</summary>
+        </member>
+        <member name="P:TestRail.Types.Priority.Name">
+            <summary>name of the priority</summary>
+        </member>
+        <member name="P:TestRail.Types.Priority.ShortName">
+            <summary>a shortened name of the priority</summary>
+        </member>
+        <member name="P:TestRail.Types.Priority.IsDefault">
+            <summary>true if the priority is default</summary>
+        </member>
+        <member name="P:TestRail.Types.Priority.PriorityLevel">
+            <summary>Priority level</summary>
+        </member>
+        <member name="T:TestRail.Types.Project">
+            <summary>stores information about a project</summary>
+        </member>
+        <member name="M:TestRail.Types.Project.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Project.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a project</summary>
+            <param name="json">json to parse</param>
+            <returns>project corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Project.GetJson">
+            <summary>Creates a json object for this class</summary>
+            <returns>json object that represents this class</returns>
+        </member>
+        <member name="P:TestRail.Types.Project.ID">
+            <summary>id of the project</summary>
+        </member>
+        <member name="P:TestRail.Types.Project.Name">
+            <summary>name of the project</summary>
+        </member>
+        <member name="P:TestRail.Types.Project.Url">
+            <summary>url of the project</summary>
+        </member>
+        <member name="P:TestRail.Types.Project.Announcement">
+            <summary>announcement associated with the project</summary>
+        </member>
+        <member name="P:TestRail.Types.Project.ShowAnnouncement">
+            <summary>
+            true if the announcement should be displayed on the project's overview page and
+            false otherwise
+            </summary>
+        </member>
+        <member name="P:TestRail.Types.Project.IsCompleted">
+            <summary>true if the project has been completed</summary>
+        </member>
+        <member name="P:TestRail.Types.Project.CompletedOn">
+            <summary>date on which the milestone was completed</summary>
+        </member>
+        <member name="T:TestRail.Types.Result">
+            <summary>stores information about the result of a test</summary>
+        </member>
+        <member name="M:TestRail.Types.Result.ToString">
+            <summary>
+            string representation of the object
+            </summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Result.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>Parse the JSON into a Result</summary>
+            <param name="json">json object to parse</param>
+            <returns>a Result</returns>
+        </member>
+        <member name="M:TestRail.Types.Result.GetJson">
+            <summary>Returns a json object that represents this class</summary>
+            <returns>json object that represents this class</returns>
+        </member>
+        <member name="P:TestRail.Types.Result.ID">
+            <summary>ID of the result</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.TestID">
+            <summary>ID of the test</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.StatusID">
+            <summary>ID of the test status</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.CreatedBy">
+            <summary>created by</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.CreatedOn">
+            <summary>result created on</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.AssignedToID">
+            <summary>the ID of the user the test should be assigned to</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.Comment">
+            <summary>the comment /description for the test result</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.Version">
+            <summary>the version or build tested against</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.Elapsed">
+            <summary>the time it took to execute the test</summary>
+        </member>
+        <member name="P:TestRail.Types.Result.Defects">
+            <summary>a comma-separated list of defects to link to the test result</summary>
+        </member>
+        <member name="T:TestRail.Types.ResultStatus">
+            <summary>the enumeration represents the status of a test result</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.Untested">
+            <summary>the test has not been run</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.Passed">
+            <summary>the test passed</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.Blocked">
+            <summary>the test is blocked</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.Retest">
+            <summary>the test needs to be rerun</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.Failed">
+            <summary>the test failed</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.CustomStatus1">
+            <summary>custom status 1</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.CustomStatus2">
+            <summary>custom status 2</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.CustomStatus3">
+            <summary>custom status 3</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.CustomStatus4">
+            <summary>custom status 4</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.CustomStatus5">
+            <summary>custom status 5</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.CustomStatus6">
+            <summary>custom status 6</summary>
+        </member>
+        <member name="F:TestRail.Types.ResultStatus.CustomStatus7">
+            <summary>custom status 7</summary>
+        </member>
+        <member name="T:TestRail.Types.ResultStatusExtensions">
+            <summary>extension methods for the status enum</summary>
+        </member>
+        <member name="M:TestRail.Types.ResultStatusExtensions.ValueAsString(TestRail.Types.ResultStatus)">
+            <summary>gets the value of the enum as a string</summary>
+            <param name="s">the status</param>
+            <returns>the value of the status enum as a string</returns>
+        </member>
+        <member name="T:TestRail.Types.Run">
+            <summary>stores information about a run</summary>
+        </member>
+        <member name="M:TestRail.Types.Run.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Run.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a run</summary>
+            <param name="json">json to parse</param>
+            <returns>run corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Run.GetJson">
+            <summary>Creates a json object for this class</summary>
+            <returns>json object that represents this class</returns>
+        </member>
+        <member name="P:TestRail.Types.Run.ID">
+            <summary>id of the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.Name">
+            <summary>name of the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.Description">
+            <summary>description of the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.SuiteID">
+            <summary>id of the suite associated with the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.MilestoneID">
+            <summary>id of the milestone associated with the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.Config">
+            <summary>config for the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.IsCompleted">
+            <summary>true if the run has been completes</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CompletedOn">
+            <summary>date on which the run which was completed</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.PassedCount">
+            <summary>number of tests in the plan that passed</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.BlockedCount">
+            <summary>number of tests in the plan that are blocked</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.UntestedCount">
+            <summary>number of tests in the plan that are untested</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.RetestCount">
+            <summary>number of tests in the plan that need to be retested</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.FailedCount">
+            <summary>number of tests in the plan that failed</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.ProjectID">
+            <summary>id of the project associated with the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.PlanID">
+            <summary>id of the plan associated with the run</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.AssignedTo">
+            <summary>is of the user it is assigned to</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.IncludeAll">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CustomStatus1Count">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CustomStatus2Count">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CustomStatus3Count">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CustomStatus4Count">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CustomStatus5Count">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CustomStatus6Count">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CustomStatus7Count">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.Url">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Run.CaseIDs">
+            <summary>an array of case IDs for the custom case selection</summary>
+        </member>
+        <member name="P:TestRail.Types.Run.ConfigIDs">
+            <summary>an array of case IDs for the custom case selection</summary>
+        </member>
+        <member name="T:TestRail.Types.Section">
+            <summary>stores information about a section</summary>
+        </member>
+        <member name="M:TestRail.Types.Section.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Section.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a section</summary>
+            <param name="json">json to parse</param>
+            <returns>section corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Section.GetJson">
+            <summary>Creates a json object for this class</summary>
+            <returns>json object that represents this class</returns>
+        </member>
+        <member name="P:TestRail.Types.Section.ID">
+            <summary>id of the section</summary>
+        </member>
+        <member name="P:TestRail.Types.Section.Name">
+            <summary>name of the section</summary>
+        </member>
+        <member name="P:TestRail.Types.Section.ParentID">
+            <summary>id of the parent section of the section</summary>
+        </member>
+        <member name="P:TestRail.Types.Section.Depth">
+            <summary>depth of the section</summary>
+        </member>
+        <member name="P:TestRail.Types.Section.DisplayOrder">
+            <summary>display order of the section</summary>
+        </member>
+        <member name="P:TestRail.Types.Section.SuiteID">
+            <summary>id of the suite associated with the section</summary>
+        </member>
+        <member name="T:TestRail.Types.Status">
+            <summary>stores information about a status</summary>
+        </member>
+        <member name="M:TestRail.Types.Status.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>	
+        </member>
+        <member name="M:TestRail.Types.Status.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>Parses json into a Status object</summary>
+            <param name="json">json to parse</param>
+            <returns>Status object corresponding to the json</returns>
+        </member>
+        <member name="P:TestRail.Types.Status.ID">
+            <summary>id of the status</summary>
+        </member>
+        <member name="P:TestRail.Types.Status.Name">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Status.label">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Status.ColorDark">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Status.ColorMedium">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Status.ColorBright">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Status.IsSystem">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Status.IsUntested">
+            <summary></summary>
+        </member>
+        <member name="P:TestRail.Types.Status.IsFinal">
+            <summary></summary>
+        </member>
+        <member name="T:TestRail.Types.Step">
+            <summary>stores information about a step</summary>
+        </member>
+        <member name="F:TestRail.Types.Step.Description">
+            <summary>description of the step</summary>
+        </member>
+        <member name="F:TestRail.Types.Step.Expected">
+            <summary>expected result for the step</summary>
+        </member>
+        <member name="F:TestRail.Types.Step.Actual">
+            <summary>actual result for the step</summary>
+        </member>
+        <member name="F:TestRail.Types.Step.Status">
+            <summary>result of the step</summary>
+        </member>
+        <member name="M:TestRail.Types.Step.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a step</summary>
+            <param name="json">json to parse</param>
+            <returns>step corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Step.GetJsonObject">
+            <summary>Get the json object that describes this class</summary>
+            <returns>json object for this class</returns>
+        </member>
+        <member name="T:TestRail.Types.Suite">
+            <summary>stores information about a suite</summary>
+        </member>
+        <member name="M:TestRail.Types.Suite.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Suite.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses json into a suite</summary>
+            <param name="json">json to parse</param>
+            <returns>suite corresponding to the json</returns>
+        </member>
+        <member name="M:TestRail.Types.Suite.GetJson">
+            <summary>Creates a json object for this class</summary>
+            <returns>json object that represents this class</returns>
+        </member>
+        <member name="P:TestRail.Types.Suite.ID">
+            <summary>id of the suite</summary>
+        </member>
+        <member name="P:TestRail.Types.Suite.Name">
+            <summary>name of the suite</summary>
+        </member>
+        <member name="P:TestRail.Types.Suite.Description">
+            <summary>description of the suite</summary>
+        </member>
+        <member name="P:TestRail.Types.Suite.ProjectID">
+            <summary>id of the project associated with the suite</summary>
+        </member>
+        <member name="P:TestRail.Types.Suite.Url">
+            <summary>url to view the suite</summary>
+        </member>
+        <member name="T:TestRail.Types.Test">
+            <summary>stores information about a test</summary>
+        </member>
+        <member name="F:TestRail.Types.Test.Title">
+            <summary>title of the test</summary>
+        </member>
+        <member name="M:TestRail.Types.Test.ToString">
+            <summary>string representation of the object</summary>
+            <returns>string representation of the object</returns>
+        </member>
+        <member name="M:TestRail.Types.Test.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>parses a test from the supplied json</summary>
+            <param name="json">json for the test</param>
+            <returns>test corresponding to the json</returns>
+        </member>
+        <member name="P:TestRail.Types.Test.ID">
+            <summary>id of the test</summary>
+        </member>
+        <member name="P:TestRail.Types.Test.CaseID">
+            <summary>id of the test case</summary>
+        </member>
+        <member name="P:TestRail.Types.Test.RunID">
+            <summary>id of the test run</summary>
+        </member>
+        <member name="P:TestRail.Types.Test.Status">
+            <summary>test rail status id</summary>
+        </member>
+        <member name="P:TestRail.Types.Test.AssignedToID">
+            <summary>id of the user the test is assigned to</summary>
+        </member>
+        <member name="T:TestRail.TestRailClient">
+            <summary>client used to access test case data in testrail</summary>
+        </member>
+        <member name="F:TestRail.TestRailClient._URL_">
+            <summary>url for testrail</summary>
+        </member>
+        <member name="F:TestRail.TestRailClient._UserName_">
+            <summary>testrail username</summary>
+        </member>
+        <member name="F:TestRail.TestRailClient._Password_">
+            <summary>testrail password</summary>
+        </member>
+        <member name="M:TestRail.TestRailClient.#ctor(System.String,System.String,System.String)">
+            <summary>constructor</summary>
+            <param name="url">url for test rail</param>
+            <param name="username">user name</param>
+            <param name="password">password</param>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetPriorityForCase(TestRail.Types.Case)">
+            <summary>
+            Get the priority for the case if we can
+            </summary>
+            <param name="c">case to get the priority from</param>
+            <returns>int value of priority if possible, null if not found</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddResult(System.UInt64,System.Nullable{TestRail.Types.ResultStatus},System.String,System.String,System.Nullable{System.TimeSpan},System.String,System.Nullable{System.UInt64},Newtonsoft.Json.Linq.JObject)">
+            <summary>adds a result for a test</summary>
+            <param name="testID">id of the test</param>
+            <param name="status">status of the result</param>
+            <param name="comment">comment to log</param>
+            <param name="version">version</param>
+            <param name="elapsed">time elapsed to complete the test</param>
+            <param name="defects">defects associated with the result</param>
+            <param name="assignedToID">id of the user the result is assigned to</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddResultForCase(System.UInt64,System.UInt64,System.Nullable{TestRail.Types.ResultStatus},System.String,System.String,System.Nullable{System.TimeSpan},System.String,System.Nullable{System.UInt64},Newtonsoft.Json.Linq.JObject)">
+            <summary>creates a new test result for a test run and case combination</summary>
+            <param name="runID">the id of the test run</param>
+            <param name="CaseID">the id of the test case</param>
+            <param name="status">status of the result</param>
+            <param name="comment">comment to log</param>
+            <param name="version">version</param>
+            <param name="elapsed">time elapsed to complete the test</param>
+            <param name="defects">defects associated with the result</param>
+            <param name="assignedToID">id of the user the result is assigned to</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddRun(System.UInt64,System.UInt64,System.String,System.String,System.UInt64,System.Nullable{System.UInt64},System.Collections.Generic.HashSet{System.UInt64})">
+             <summary>adds a run</summary>
+             <param name="projectID">id of the project</param>
+             <param name="suiteID">id of the suite</param>
+             <param name="name">name of the run</param>
+             <param name="description">description of the run</param>
+             <param name="milestoneID">id of the milestone</param>
+             <param name="assignedToID">id of the user the run should be assigned to</param>
+            <param name="caseIDs">(optional)an array of case IDs for the custom case selection, if null, then will include all case ids from the suite </param>
+             <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddCase(System.UInt64,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.String,System.Nullable{System.UInt64},System.String)">
+            <summary>Add a case</summary>
+            <param name="sectionID">section id to add the case to</param>
+            <param name="title">title of the case</param>
+            <param name="typeID">(optional)the ID of the case type</param>
+            <param name="priorityID">(optional)the id of the case priority</param>
+            <param name="estimate">(optional)the estimate, e.g. "30s" or "1m 45s"</param>
+            <param name="milestoneID">(optional)the ID of the milestone to link to the test case</param>
+            <param name="refs">(optional)a comma-separated list of references/requirements</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddProject(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>Add a project</summary>
+            <param name="projectName">the name of the project</param>
+            <param name="announcement">(optional)the description of the project</param>
+            <param name="showAnnouncement">(optional)true if the announcement should be displayed on the project's overview page and false otherwise</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddSection(System.UInt64,System.UInt64,System.String,System.Nullable{System.UInt64})">
+            <summary>creates a new section</summary>
+            <param name="projectID">the ID of the project</param>
+            <param name="suiteID">the ID of the test suite</param>
+            <param name="name">the name of the section</param>
+            <param name="parentID">(optional)the ID of the parent section (to build section hierarchies)</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddSuite(System.UInt64,System.String,System.String)">
+            <summary>Creates a new test suite</summary>
+            <param name="projectID">the ID of the project the test suite should be added to</param>
+            <param name="name">the name of the test suite</param>
+            <param name="description">(optional)the description of the test suite</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddPlan(System.UInt64,System.String,System.String,System.Nullable{System.UInt64},System.Collections.Generic.List{TestRail.Types.PlanEntry})">
+            <summary>creates a new plan</summary>
+            <param name="projectID">id of the project the test plan should be added to</param>
+            <param name="name">name of the test plan</param>
+            <param name="description">(optional)description of the test plan</param>
+            <param name="milestoneID">(optional)id of the milestone to link the test plan</param>
+            <param name="entries">an array of objects describing the test runs of the plan</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddPlanEntry(System.UInt64,System.UInt64,System.String,System.Nullable{System.UInt64},System.Collections.Generic.List{System.UInt64})">
+            <summary>Creates a new test run for a test plan</summary>
+            <param name="planID">the ID of the plan the test run should be added to</param>
+            <param name="suiteID">the ID of the test suite for the test run</param>
+            <param name="name">(optional)the name of the test run</param>
+            <param name="assignedToID">(optional)the ID of the user the test run should be assigned to</param>
+            <param name="include_all">(optional)true for including all test cases of the test suite and false for a custom selection (default: true)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.AddMilestone(System.UInt64,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>adds a milestone</summary>
+            <param name="projectID">id of the project</param>
+            <param name="name">name of the milestone</param>
+            <param name="description">(optional)description of the milestone</param>
+            <param name="dueOn">(optional)date on which the milestone is due</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdateCase(System.UInt64,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.String,System.Nullable{System.UInt64},System.String)">
+            <summary>update an existing case</summary>
+            <param name="caseID">the ID of the test case</param>
+            <param name="title">title of the case</param>
+            <param name="typeID">(optional)the ID of the case type</param>
+            <param name="priorityID">(optional)the id of the case priority</param>
+            <param name="estimate">(optional)the estimate, e.g. "30s" or "1m 45s"</param>
+            <param name="milestoneID">(optional)the ID of the milestone to link to the test case</param>
+            <param name="refs">(optional)a comma-separated list of references/requirements</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdateMilestone(System.UInt64,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean})">
+            <summary>update an existing milestone</summary>
+            <param name="milestoneID">id of the milestone</param>
+            <param name="name">(optional)name of the milestone</param>
+            <param name="description">(optional)description of the milestone</param>
+            <param name="dueOn">(optional)date on which the milestone is due</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdatePlan(System.UInt64,System.String,System.String,System.Nullable{System.UInt64})">
+            <summary>Update an existing plan</summary>
+            <param name="planID">id of the plan</param>
+            <param name="name">(optional)name of the test plan </param>
+            <param name="description">(optional)the description of the test plan</param>
+            <param name="milestoneID">(optional)the id of the milestone to link to the test plan</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdatePlanEntry(System.UInt64,System.String,System.String,System.Nullable{System.UInt64},System.Collections.Generic.List{System.UInt64})">
+            <summary>Creates a new test run for a test plan</summary>
+            <param name="planID">the ID of the plan the test run should be added to</param>
+            <param name="entryID">the ID of the test plan entry</param>
+            <param name="name">(optional)the name of the test run</param>
+            <param name="assignedToID">(optional)the ID of the user the test run should be assigned to</param>
+            <param name="include_all">(optional)true for including all test cases of the test suite and false for a custom selection (default: true)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdateProject(System.UInt64,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>Update an existing project</summary>
+            <param name="projectID">the id of the project</param>
+            <param name="projectName">the name of the project</param>
+            <param name="announcement">(optional)the description of the project</param>
+            <param name="showAnnouncement">(optional)true if the announcement should be displayed on the project's overview page and false otherwise</param>
+            <param name="isCompleted">(optional)specifies whether a project is considered completed or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdateRun(System.UInt64,System.String,System.String,System.Nullable{System.UInt64},System.Collections.Generic.HashSet{System.UInt64})">
+             <summary>update an existing test run</summary>
+             <param name="runID">the id of an existing run</param>
+             <param name="name">(optional)name of the test run</param>
+             <param name="description">(optional)description of the test run</param>
+             <param name="milestoneID">(optional)the id of the milestone to link to the test run</param>
+             <param name="include_all">(optional)true for including all test cases of the test suite and false for a custom case selection</param>
+            <param name="caseIDs">an array of case IDs for the custom case selection</param>
+             <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdateSection(System.UInt64,System.String)">
+            <summary>Updates an existing section</summary>
+            <param name="sectionID">id of the section to update</param>
+            <param name="name">name of the section</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.UpdateSuite(System.UInt64,System.String,System.String)">
+            <summary>Update an existing suite</summary>
+            <param name="suiteID">id of the suite to update</param>
+            <param name="name">(optional)new name to update to</param>
+            <param name="description">(optional)new description to update to</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.ClosePlan(System.UInt64)">
+            <summary>closes a plan</summary>
+            <param name="planID">id of the plan</param>
+            <returns>true if successful</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.CloseRun(System.UInt64)">
+            <summary>closes a run</summary>
+            <param name="runID">id of the run</param>
+            <returns>true if successful</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.DeleteMilestone(System.UInt64)">
+            <summary>Delete a milestone</summary>
+            <param name="milestoneID">id of the milestone</param>
+            <returns>result of the deletion</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.DeleteCase(System.UInt64)">
+            <summary>Delete a case</summary>
+            <param name="caseID">id of the case to delete</param>
+            <returns>result of the deletion</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.DeletePlan(System.UInt64)">
+            <summary>Delete a plan</summary>
+            <param name="planID">id of the plan to delete</param>
+            <returns>result of the deletion</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.DeletePlanEntry(System.UInt64,System.String)">
+            <summary>Delete a specific plan entry for a plan id</summary>
+            <param name="planID">id of the plan</param>
+            <param name="entryID">string representation of the GUID for the entryID</param>
+            <returns>result of the deletion</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.DeleteProject(System.UInt64)">
+            <summary>Delete the Project</summary>
+            <param name="projectID">id of the project to delete</param>
+            <returns>result of the deletion</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.DeleteSection(System.UInt64)">
+            <summary>Delete the section</summary>
+            <param name="sectionID">id of the section to delete</param>
+            <returns>result of the deletion</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.DeleteSuite(System.UInt64)">
+            <summary>Delete the suite</summary>
+            <param name="suiteID">id of the suite to delete</param>
+            <returns>result of the deletion</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetTest(System.UInt64)">
+            <summary>gets a test</summary>
+            <param name="testID">id of the test</param>
+            <returns>information about the test</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetTests(System.UInt64)">
+            <summary>gets tests associated with a run</summary>
+            <param name="runID">id of the run</param>
+            <returns>tests associated with the run</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetCase(System.UInt64)">
+            <summary>gets a case</summary>
+            <param name="caseID">id of the case</param>
+            <returns>information about the case</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetCases(System.UInt64,System.UInt64,System.Nullable{System.UInt64})">
+            <summary>gets cases associated with a suite</summary>
+            <param name="proejctID">id of the project</param>
+            <param name="suiteID">id of the suite</param>
+            <param name="sectionID">(optional) id of the section</param>
+            <returns>cases associated with the suite</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetSuite(System.UInt64)">
+            <summary>gets a suite</summary>
+            <param name="suiteID">id of the suite</param>
+            <returns>information about the suite</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetSuites(System.UInt64)">
+            <summary>gets suites associated with a project</summary>
+            <param name="projectID">id of the project</param>
+            <returns>suites associated with the project</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetSection(System.UInt64)">
+            <summary>gets a section</summary>
+            <param name="sectionID">id of the section</param>
+            <returns>information about the section</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetSections(System.UInt64,System.UInt64)">
+            <summary>gets sections associated with a suite</summary>
+            <param name="projectID">id of the project</param>
+            <param name="suiteID">id of the suite</param>
+            <returns>sections associated with the suite</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetRun(System.UInt64)">
+            <summary>gets a run</summary>
+            <param name="runID">id of the run</param>
+            <returns>information about the run</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetRuns(System.UInt64)">
+            <summary>gets runs associated with a project</summary>
+            <param name="projectID">id of the project</param>
+            <returns>runs associated with the project</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetPlan(System.UInt64)">
+            <summary>gets a plan</summary>
+            <param name="planID">id of the plan</param>
+            <returns>information about the plan</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetPlans(System.UInt64)">
+            <summary>gets plans associated with a project</summary>
+            <param name="projectID">id of the project</param>
+            <returns>plans associated with the project</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetMilestone(System.UInt64)">
+            <summary>gets a milestone</summary>
+            <param name="milestoneID">id of the milestone</param>
+            <returns>information about the milestone</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetMilestones(System.UInt64)">
+            <summary>gets milestones associated with a project</summary>
+            <param name="projectID">id of the project</param>
+            <returns>milestone associated with project</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetProject(System.UInt64)">
+            <summary>gets a project</summary>
+            <param name="projectID">id of the project</param>
+            <returns>information about the project</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetProjects">
+            <summary>gets all projects contained in the testrail instance</summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetUser(System.UInt64)">
+            <summary>Get User for user id</summary>
+            <param name="userID">user id to search for</param>
+            <returns>a User object</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetUserByEmail(System.String)">
+            <summary>Find a user by their email address</summary>
+            <param name="email">email address of the user</param>
+            <returns>user if found</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetUsers">
+            <summary>Get a list of users in the testrail instance</summary>
+            <returns>List of users</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetResults(System.UInt64,System.Nullable{System.UInt64})">
+            <summary>
+            Returns a list of test results for a test 
+            </summary>
+            <param name="testID">id of the test</param>
+            <param name="limit">(optional) maximum amount of test results to return, latest first</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetResultsForCase(System.UInt64,System.UInt64,System.Nullable{System.UInt64})">
+            <summary>
+            Return the list of test results for a test run and the case combination
+            </summary>
+            <param name="runID">id of the rest run</param>
+            <param name="caseID">id of the test case</param>
+            <param name="limit">(optional) maximum amount of test results to return, latest first</param>
+            <returns>list of test results for a case</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetStatuses">
+            <summary>
+            Returns the list of statuses available to test rail
+            </summary>
+            <returns>list of possible statuses</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetPriorities">
+            <summary>
+            Get a list of all available priorities
+            </summary>
+            <returns>list of priorities</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient.GetConfigurationGroups(System.UInt64)">
+            <summary>
+            Returns a list of Config Groups available in a Project
+            </summary>
+            <param name="projectID">ID of the Project to return the Config Groups for</param>
+            <returns>list of ConfigurationGroup</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._GetItem_``1(System.String,System.String,System.Func{Newtonsoft.Json.Linq.JObject,``0})">
+            <summary>executes a get request for an item</summary>
+            <typeparam name="T">the type of item</typeparam>
+            <param name="nodeName">the name of item's node</param>
+            <param name="parse">a method which parse json into the item</param>
+            <param name="id">the id of the item</param>
+            <returns>object of the supplied type containing information about the item</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._GetItems_``1(System.String,System.String,System.Func{Newtonsoft.Json.Linq.JObject,``0})">
+            <summary>executes a get request for an item</summary>
+            <typeparam name="T">the type of the item</typeparam>
+            <param name="nodeName">the name of the item's node</param>
+            <param name="parse">a method which parses the json into the item</param>
+            <param name="id1">the id of the first item on which to filter the get request</param>
+            <param name="id2">the id of the second item on which to filter the get request</param>
+            <param name="options">additional options to append to the get request</param>
+            <returns>list of objects of the supplied type corresponding th supplied filters</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._CreateUri_(TestRail.TestRailClient._CommandType_,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.String,System.String)">
+            <summary>Creates a URI with the parameters given in the format</summary>
+            <param name="uriType">the type of action the server is going to take (i.e. get, add, update, close)</param>
+            <param name="nodeName"></param>
+            <param name="id1"></param>
+            <param name="id2"></param>
+            <param name="options"></param>
+            <returns>the uri</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._AddCase_(System.UInt64,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.String,System.Nullable{System.UInt64},System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>Add a case</summary>
+            <param name="sectionID">section id to add the case to</param>
+            <param name="title">title of the case</param>
+            <param name="typeID">(optional)the ID of the case type</param>
+            <param name="priorityID">(optional)the id of the case priority</param>
+            <param name="estimate">(optional)the estimate, e.g. "30s" or "1m 45s"</param>
+            <param name="milestoneID">(optional)the ID of the milestone to link to the test case</param>
+            <param name="refs">(optional)a comma-separated list of references/requirements</param>
+            <param name="customs">(optional)custom json params to add to the current json parameters</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._UpdateCase_(System.UInt64,System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.String,System.Nullable{System.UInt64},System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>update an existing case</summary>
+            <param name="caseID">the ID of the test case</param>
+            <param name="title">title of the case</param>
+            <param name="typeID">(optional)the ID of the case type</param>
+            <param name="priorityID">(optional)the id of the case priority</param>
+            <param name="estimate">(optional)the estimate, e.g. "30s" or "1m 45s"</param>
+            <param name="milestoneID">(optional)the ID of the milestone to link to the test case</param>
+            <param name="refs">(optional)a comma-separated list of references/requirements</param>
+            <param name="customs">(optional)</param>
+            <returns>result of the command</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._CallTestRailGetEndpoint(System.String)">
+            <summary>makes an http get call to the testrail</summary>
+            <param name="uri">uri of the endpoint</param>
+            <returns>result of the call</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._CallPostEndpoint(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>makes an http post call to the testrail</summary>
+            <param name="uri">uri of the endpoint</param>
+            <param name="postParams">post parameters alternating between keys and values</param>
+            <returns>result of the call</returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._SendCommand(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>Send a command to the server</summary>
+            <param name="uri">uri to send</param>
+            <param name="jsonParams">parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._CasesFoundInSuite(System.UInt64,System.UInt64,System.Collections.Generic.HashSet{System.UInt64})">
+            <summary>
+            Determines if at least one of the case ids given is contained in the project and suite 
+            </summary>
+            <param name="projectID">id of the project</param>
+            <param name="suiteID">id of the suite</param>
+            <param name="caseIDs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.TestRailClient._CreatePrioritiesDict">
+            <summary>
+            Create a priority dictionary 
+            </summary>
+            <returns>dictionary of priority ID (from test rail) to priority levels(where Higher value means higher priority)</returns>
+        </member>
+        <member name="P:TestRail.TestRailClient.Projects">
+            <summary>projects in the test rail database</summary>
+        </member>
+        <member name="E:TestRail.TestRailClient.OnHTTPRequestSent">
+            <summary>called when the client sends an http request</summary>
+        </member>
+        <member name="E:TestRail.TestRailClient.OnHTTPResponseReceived">
+            <summary>called when the client receives an http response</summary>
+        </member>
+        <member name="E:TestRail.TestRailClient.OnOperationFailed">
+            <summary>called when an operation fails</summary>
+        </member>
+        <member name="T:TestRail.TestRailClient.HTTPRequestSentEventArgs">
+            <summary>event args for http request sent</summary>
+        </member>
+        <member name="F:TestRail.TestRailClient.HTTPRequestSentEventArgs.Method">
+            <summary>http method (GET, POST, PUT, DELETE, etc.)</summary>
+        </member>
+        <member name="F:TestRail.TestRailClient.HTTPRequestSentEventArgs.Uri">
+            <summary>uri</summary>
+        </member>
+        <member name="F:TestRail.TestRailClient.HTTPRequestSentEventArgs.PostContent">
+            <summary>post data</summary>
+        </member>
+        <member name="M:TestRail.TestRailClient.HTTPRequestSentEventArgs.#ctor(System.String,System.Uri,System.String)">
+            <summary>constructor</summary>
+            <param name="method">http method used</param>
+            <param name="uri">uri used</param>
+            <param name="postContent">post content sent (if any)</param>
+        </member>
+        <member name="T:TestRail.TestRailClient._CommandType_">
+            <summary>
+            Command type's available
+            </summary>
+        </member>
+        <member name="T:TestRail.Types.User">
+            <summary>stores information about a user</summary>
+        </member>
+        <member name="M:TestRail.Types.User.ToString">
+            <summary>
+            Displays the User's ID : User Name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestRail.Types.User.Parse(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Parses the json object and returns an User object
+            </summary>
+            <param name="json">json to parse</param>
+            <returns>a user object corresponding to the json object</returns>
+        </member>
+        <member name="P:TestRail.Types.User.ID">
+            <summary>
+            id of the user 
+            </summary>
+        </member>
+        <member name="P:TestRail.Types.User.Name">
+            <summary>
+            name of the user
+            </summary>
+        </member>
+        <member name="P:TestRail.Types.User.Email">
+            <summary>
+            email of the user
+            </summary>
+        </member>
+        <member name="P:TestRail.Types.User.IsAdmin">
+            <summary>
+            is the user an admin
+            </summary>
+        </member>
+        <member name="P:TestRail.Types.User.RoleID">
+            <summary>
+            role id of the user
+            </summary>
+        </member>
+        <member name="P:TestRail.Types.User.IsActive">
+            <summary>
+            Is the user active 
+            </summary>
+        </member>
+        <member name="T:TestRail.JsonUtility">
+            <summary>
+            Helper class for Json Objects
+            </summary>
+        </member>
+        <member name="M:TestRail.JsonUtility.Merge(Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>Merge two Json Objects</summary>
+            <param name="obj1">object 1 to merge</param>
+            <param name="obj2">object 2 to merge</param>
+            <returns>a non null Json object (NOTE: may be empty)</returns>
+        </member>
+        <member name="M:TestRail.JsonUtility.ConvertJArrayToList``1(Newtonsoft.Json.Linq.JArray,System.Func{Newtonsoft.Json.Linq.JObject,``0})">
+            <summary>Converts a JArray into a List of type T</summary>
+            <param name="jarray">JArray to parse</param>
+            <returns>returns a list of objects corresponding to the json, empty list if nothing exists</returns>
+        </member>
+    </members>
+</doc>

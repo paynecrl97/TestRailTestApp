@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRailTestApp", "TestRailTestApp\TestRailTestApp.csproj", "{EBE43A85-69FA-4EB7-8393-DD2A2461801C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRail", "testrail-client\TestRail\TestRail.csproj", "{68C04A3F-DA7C-4588-8AA8-11A01C13630B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBE43A85-69FA-4EB7-8393-DD2A2461801C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE43A85-69FA-4EB7-8393-DD2A2461801C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE43A85-69FA-4EB7-8393-DD2A2461801C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE43A85-69FA-4EB7-8393-DD2A2461801C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C04A3F-DA7C-4588-8AA8-11A01C13630B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C04A3F-DA7C-4588-8AA8-11A01C13630B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C04A3F-DA7C-4588-8AA8-11A01C13630B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C04A3F-DA7C-4588-8AA8-11A01C13630B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
